@@ -46,7 +46,4 @@ public interface IPaymentRequestSpecification {
     void optimize();
 
     IWallet getWallet();
-
-    BigDecimal getTolerance();
-
 }

@@ -17,9 +17,6 @@
  ************************************************************************************/
 package com.generalbytes.batm.server.extensions.watchlist;
 
-import java.util.HashSet;
-import java.util.Set;
-
 /**
  * This class defines basic interface which every watchlist should conform to
  */
@@ -71,12 +68,5 @@ public interface IWatchList {
      * @return
      */
     WatchListResult search(WatchListQuery query);
-
-    /**
-     * This method returns all blacklisted crypto addresses.
-     */
-    default Set<BlacklistedAddress> getBlacklistedCryptoAddresses() {
-        return new HashSet<>();
-    }
 
 }

@@ -64,6 +64,7 @@ public abstract class AbstractRPCPaymentSupport implements IPaymentSupport{
 
     public abstract String getCurrency();
     public abstract BigDecimal getMinimumNetworkFee(RPCClient client);
+    public abstract BigDecimal getTolerance();
     public abstract long getMaximumWatchingTimeMillis();
     public abstract long getMaximumWaitForPossibleRefundInMillis();
     public abstract int calculateTransactionSize(int numberOfInputs, int numberOfOutputs);
@@ -511,7 +512,7 @@ public abstract class AbstractRPCPaymentSupport implements IPaymentSupport{
                 validTill,
                 paymentAddress,
                 cryptoTotalToSend,
-                spec.getTolerance(),
+                getTolerance(),
                 spec.getRemoveAfterNumberOfConfirmationsOfIncomingTransaction(),
                 spec.getRemoveAfterNumberOfConfirmationsOfOutgoingTransaction(),
                 spec.getWallet(),
